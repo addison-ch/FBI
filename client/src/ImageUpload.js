@@ -1,7 +1,6 @@
-
 import React from 'react';
 
-class Main extends React.Component {
+class ImageUpload extends React.Component {
   constructor(props) {
     super(props);
 
@@ -17,7 +16,7 @@ class Main extends React.Component {
 
     const data = new FormData();
     data.append('file', this.uploadInput.files[0]);
-    data.append('filename', this.fileName.value);
+    data.append('filename', "label");
 
     fetch('http://localhost:5000/image_upload', {
       method: 'POST',
@@ -25,11 +24,9 @@ class Main extends React.Component {
     }).then((response) => {
       response.json().then((body) => {
           console.log(body);
-        // console.log(this.uploadInput.files[0])
-        // this.setState({ imageURL: `http://localhost:5000/${this.uploadInput.files[0].name}` });
       });
     });
-  }
+  } 
 
   render() {
     return (
@@ -37,17 +34,14 @@ class Main extends React.Component {
         <div>
           <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
         </div>
-        <div>
-          <input ref={(ref) => { this.fileName = ref; }} type="text" placeholder="Enter the desired name of file" />
-        </div>
         <br />
         <div>
           <button>Upload</button>
         </div>
-        <img src={this.state.imageURL} alt="img" />
+        {/* <img src={this.state.imageURL} alt="img" /> */}
       </form>
     );
   }
 }
 
-export default Main;
+export default ImageUpload;

@@ -17,48 +17,30 @@ export default function App () {
       console.log(response);
     })}, [])
   
-    function handleUploadImage(ev) {
-      ev.preventDefault();
-      const formData = new FormData();
-      // formData.append("file", )
-
-      console.log(file);
-      // const data = new FormData();
-      // data.append('file', this.uploadInput.files[0]);
-      // data.append('filename', this.fileName.value);
   
-      // fetch('http://localhost:5000/image_upload', {
-      //   method: 'POST',
-      //   body: data,
-      // }).then((response) => {
-      //   response.json().then((body) => {
-      //     this.setState({ imageURL: `http://localhost:8000/${body.file}` });
-      //   });
-      // });
-    }
     
-    function checkFile() {
+  //   function checkFile() {
     
-    if (file != null) {
-      console.log(file)
-    setHasImage(true);
+  //   if (file != null) {
+  //     console.log(file)
+  //   setHasImage(true);
     
-    const formData = new FormData();
-    formData.append('file', file);
+  //   const formData = new FormData();
+  //   formData.append('file', file);
 
-    console.log(formData)
+  //   console.log(formData)
 
-     fetch('http://localhost:5000/image_upload', {
-         method: 'POST',
-         body: formData,
-      }).then((response) => {
+  //    fetch('http://localhost:5000/image_upload', {
+  //        method: 'POST',
+  //        body: formData,
+  //     }).then((response) => {
          
-          console.log(response);
-          setURL(`http://localhost:8000/${file.name}`);
-       ;
-    })
-  }
-  }
+  //         console.log(response);
+  //         setURL(`http://localhost:8000/${file.name}`);
+  //      ;
+  //   })
+  // }
+  // }
 
   
   return (
@@ -69,7 +51,7 @@ export default function App () {
 
 
     <p>File upload</p>
-    <p>{hasImage ? file.name: ""}</p>
+    {/* <p>{hasImage ? file.name: ""}</p>
     <img src={hasImage ? imgURL : ""} alt=""></img>
         <div>
           <input type="file" id="input"  
@@ -79,7 +61,7 @@ export default function App () {
             checkFile();}
         }
                 ref={inputRef}/>
-        </div>
+        </div> */}
         
         
     </>
