@@ -3,25 +3,40 @@ import './App.css';
 
 
 export default function App () {
-  const [data, setData] = useState("");
+  const [data, setData] = useState('');
   const [show, setShow] = useState(false);
-  useEffect(() => {
+  const [count, setCount] = useState(0);
+
+  const myFunction = () => {
     fetch("http://localhost:5000/api").then((response) => {
       return response.json();
     }).then((response) => {
       setData(response.msg)
-      // console.log(response.msg);
-    })}, [])
+      console.log(response.msg);
+    })
+    }
+  
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/api").then((response) => {
+  //     return response.json();
+  //   }).then((response) => {
+  //     setData(response.msg)
+  //     // console.log(response.msg);
+  //   })}, [])
+
+
   var initialValue = [
     "Star Wars", "Return of the Jedi", "Empire Strikes Back",
   ]
-  console.log(data[0])
+  // console.log(data[0])
   for(let i = 0; i<=1; i++){
       // console.log(data[0])
 
       //console.log(data['msg'][i])
       // initialValue = initialValue.push('hi')
       initialValue.push("Kiwi"+i);
+      initialValue.push(data[i])
+      // console.log(data[i])
       // initialValue.push(data['msg'][i]['ingredient'])
 
       //console.log(data['msg'].length)
@@ -32,16 +47,16 @@ export default function App () {
   // console.log(data)
   const [names, setNames] = useState(initialValue);
   const steps = [];
-  for (let i = 1; i <= 2; i++) {
-    steps.push(
-      <div key={i} className="content">
-        <button className="collapsible" onClick={({i}) =>setShow(!show)}>{data["ingredient"]}</button>
-        {
-          show?<div>{data["fact"]}</div>:null
-        }
-      </div>
-    );
-  }
+  // for (let i = 1; i <= 2; i++) {
+  //   steps.push(
+  //     <div key={i} className="content">
+  //       <button className="collapsible" onClick={({i}) =>setShow(!show)}>{data["ingredient"]}</button>
+  //       {
+  //         show?<div>{data["fact"]}</div>:null
+  //       }
+  //     </div>
+  //   );
+  // }
   // return array.map(function(each){
   //   return(<h1>hello {each.name}</h1>)
   // })
@@ -60,6 +75,16 @@ export default function App () {
       </div>
       <div className="progressBar">{ steps }</div>
       <h1>hi</h1>
+
+      <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setData(count + 1)}>
+        Click me
+      </button>
+      <button onClick={myFunction}>
+        Get data
+      </button>
+    </div>
     </>
   )
 }
