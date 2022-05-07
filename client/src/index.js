@@ -4,10 +4,12 @@ import './index.css';
 import App from './App';
 import ImageUpload from './ImageUpload'
 import reportWebVitals from './reportWebVitals';
+import Test from './Test'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Test />
     <App />
     <ImageUpload />
   </React.StrictMode>
