@@ -5,7 +5,10 @@ import './App.css';
 export default function App () {
   const [data, setData] = useState('');
   const [show, setShow] = useState(false);
-  const [count, setCount] = useState(0);
+  var initialValue = []
+  var count = 0
+
+  const [names, setNames] = useState(initialValue);
 
   const myFunction = () => {
     fetch("http://localhost:5000/api").then((response) => {
@@ -13,8 +16,28 @@ export default function App () {
     }).then((response) => {
       setData(response.msg)
       console.log(response.msg);
+      console.log(response.msg.length)
+      for(let i = 0; i<=1; i++){
+        initialValue.push(response.msg[i])
+        console.log(response.msg[i])
+      }
+      count = 1;
     })
-    }
+
+  }
+  // var initialValue = [
+  //   "Star Wars", "Return of the Jedi", "Empire Strikes Back",
+  // ]
+  // if(typeof data !== 'undefined'){
+  //   for(let i = 0; i<=1; i++){
+
+  //     initialValue.push("Kiwi"+i);
+  //     //initialValue.push(data[i]['ingredient'])
+  //     //console.log(data[i]['ingredient'])
+  //   }
+    
+  // }
+    
   
   // useEffect(() => {
   //   fetch("http://localhost:5000/api").then((response) => {
@@ -24,28 +47,6 @@ export default function App () {
   //     // console.log(response.msg);
   //   })}, [])
 
-
-  var initialValue = [
-    "Star Wars", "Return of the Jedi", "Empire Strikes Back",
-  ]
-  // console.log(data[0])
-  for(let i = 0; i<=1; i++){
-      // console.log(data[0])
-
-      //console.log(data['msg'][i])
-      // initialValue = initialValue.push('hi')
-      initialValue.push("Kiwi"+i);
-      initialValue.push(data[i])
-      // console.log(data[i])
-      // initialValue.push(data['msg'][i]['ingredient'])
-
-      //console.log(data['msg'].length)
-  //   // console.log(data.length)
-  }
-  // items = items.push(item)
-  // this.setState({items})
-  // console.log(data)
-  const [names, setNames] = useState(initialValue);
   const steps = [];
   // for (let i = 1; i <= 2; i++) {
   //   steps.push(
@@ -68,22 +69,34 @@ export default function App () {
           show?<div>{item["fact"]}</div>:null
         }
       </div>)}  */}
+      {/* <div>
+        {names.map((name) => {
+          return <div key={name}>{name['ingredient']}</div>;
+        })}
+      </div> */}
       <div>
         {names.map((name) => {
-          return <div key={name}>{name}</div>;
+          return (
+          <div key={name['ingredient']} className="content">
+                 <button className="collapsible" onClick={({i}) =>setShow(!show)}>{name["ingredient"]}</button>
+                 {
+                   show?<div>{name["fact"]}</div>:null
+                 }
+          </div>)
+          // <div>hello</div>
         })}
       </div>
-      <div className="progressBar">{ steps }</div>
-      <h1>hi</h1>
+      
+      {/* <div className="progressBar">{ steps }</div>
+      <h1>hi</h1> */}
 
-      <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setData(count + 1)}>
-        Click me
-      </button>
-      <button onClick={myFunction}>
+      <div> 
+      {count == 0
+        <button onClick={myFunction}>
         Get data
-      </button>
+        </button>
+      }
+      
     </div>
     </>
   )
