@@ -5,10 +5,6 @@ from werkzeug.utils import secure_filename
 from flask_cors import CORS, cross_origin
 import logging
 
-# imports for tesseract
-import pytesseract
-import PIL.Image
-
 # imports for paddleocr
 from paddleocr import PaddleOCR
 
@@ -80,4 +76,4 @@ if __name__ == "__main__":
     app.secret_key = os.urandom(24)
     app.run(debug=True)
 
-# CORS(app, expose_headers='Authorization')
+CORS(app, expose_headers='Authorization')

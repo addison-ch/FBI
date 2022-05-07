@@ -11,7 +11,7 @@ export default function App () {
   const [names, setNames] = useState(initialValue);
 
   const myFunction = () => {
-    fetch("http://localhost:3000/api").then((response) => {
+    fetch("http://localhost:5000/api").then((response) => {
       return response.json();
     }).then((response) => {
       setData(response.msg)
