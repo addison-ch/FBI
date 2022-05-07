@@ -11,7 +11,7 @@ export default function App () {
   const [names, setNames] = useState(initialValue);
 
   const myFunction = () => {
-    fetch("http://localhost:5000/api").then((response) => {
+    fetch("http://localhost:3000/api").then((response) => {
       return response.json();
     }).then((response) => {
       setData(response.msg)
@@ -37,8 +37,7 @@ export default function App () {
   //   }
     
   // }
-    
-  
+
   // useEffect(() => {
   //   fetch("http://localhost:5000/api").then((response) => {
   //     return response.json();
@@ -93,7 +92,7 @@ export default function App () {
       <div> 
       {/* {count == 0 */}
         <button onClick={myFunction}>
-        Get data
+          Display nutrition information
         </button>
       {/* } */}
       
