@@ -21,7 +21,7 @@ def api():
     
     print(answer_box['snippet'])
     print('hi')
-    return {"msg" : [{"ingredient": "Sodium Chloride", "fact": answer_box['snippet']}] }
+    return {"msg" : [{"ingredient": "Sodius Chloride", "fact": answer_box['snippet']}] }
 
 
 if __name__ == "__main__":
