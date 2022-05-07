@@ -9,4 +9,5 @@ Back-end:
 
 Front-end (in a seperate terminal):
 1. cd into /client
-2. npm start
+2. npm install
+3. npm start
