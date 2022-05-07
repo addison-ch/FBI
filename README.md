@@ -14,3 +14,8 @@ Front-end (in a seperate terminal):
 
 Using the google search api:
 1. pip install google-search-results
+
+Using PaddleOCR
+1. python3 -m pip install paddlepaddle-gpu==2.0.0 -i https://mirror.baidu.com/pypi/simple
+2. pip install paddlepaddle
+3. pip install "paddleocr>=2.0.1"
