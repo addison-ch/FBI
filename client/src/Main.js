@@ -24,7 +24,9 @@ class Main extends React.Component {
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-        this.setState({ imageURL: `http://localhost:8000/${body.file}` });
+          console.log(body);
+        // console.log(this.uploadInput.files[0])
+        // this.setState({ imageURL: `http://localhost:5000/${this.uploadInput.files[0].name}` });
       });
     });
   }
