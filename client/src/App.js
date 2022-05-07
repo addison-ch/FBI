@@ -91,11 +91,11 @@ export default function App () {
       <h1>hi</h1> */}
 
       <div> 
-      {count == 0
+      {/* {count == 0 */}
         <button onClick={myFunction}>
         Get data
         </button>
-      }
+      {/* } */}
       
     </div>
     </>
