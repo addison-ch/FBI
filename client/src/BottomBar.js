@@ -3,32 +3,11 @@ import './BottomBar.css'
 export default  function BottomBar() {
   return (
     <>
-    <div className="Bottom">
-
-      BottomBar
-
-      <div className="Copyright">
-        <p>
-        © Copyright Addougie 2022
-        </p>
-      </div>
-
-
-      <div className="Contact">
-        <p>
-          Contact Us
-        </p>
-      </div>
-
-
-      </div>
-
-
-
-
-
-
-
+    <div className="push"></div>
+    <footer>
+      <div>ඞ Copyright FBI Rijedoad ඞ</div>
+      <div>Contact Us</div>
+    </footer>
     </>
 
   )
