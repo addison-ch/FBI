@@ -23,7 +23,7 @@ class ImageUpload extends React.Component {
     data.append('file', this.uploadInput.files[0]);
     data.append('filename', "label");
 
-    fetch('http://localhost:3000/image_upload', {
+    fetch('http://localhost:5000/image_upload', {
       method: 'POST',
       body: data,
     }).then((response) => {
@@ -44,23 +44,22 @@ class ImageUpload extends React.Component {
       <>
       <div>
         <div>
-      <App ingredients={this.state.ingredientList} facts={this.state.factList}/>
-        </div>
-        <div>
-      <form onSubmit={this.handleUploadImage}>
-        <div>
-          <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
-        </div>
-        <br />
-        <div>
-          <button>Upload</button>
-        </div>
-       
-      </form> 
+          <form onSubmit={this.handleUploadImage}>
+            <div>
+              <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
+            </div>
+          <div>
+            <button>Upload</button>
+          </div>
+        </form> 
       </div>
-     </div>
 
-      </>
+      <div>
+        <App ingredients={this.state.ingredientList} facts={this.state.factList}/>
+      </div>
+
+     </div>
+    </>
     );
   }
 }
