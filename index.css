@@ -1,3 +1,26 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +34,252 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.index {
+  text-align: left;
+  background-color: #23395d;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.App-header {
+  margin: 5px;
+  border: 1px;
+  border-color: rgb(204, 238, 238);
+  padding-top: 40px;
+  padding-left: 40px;
+  align-items: left;
+  justify-content: top;
+  font-size: 80px;
+  color: white;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.App-Words {
+  margin: 5px;
+  font-display:10px;
+  font-size: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #61dafb;
+}
+
+.Buttons {
+  
+text-align: center;
+align-items: right;
+padding-top: 200px;
+padding-right: 100px;
+}
+
+/* Rectangle 2 */
+.Fig{
+
+position: absolute;
+width: 546px;
+height: 966px;
+left: 862px;
+top: 29px;
+
+background: #99CBFA;
+border-radius: 63px;
+
+
+/* Rectangle 1 */
+
+
+position: absolute;
+width: 800px;
+height: 966px;
+left: 24px;
+top: 29px;
+
+background: #98C1FF;
+border-radius: 49px;
+
+
+/* Rectangle 4 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 297px;
+height: 60px;
+right: 1035px;
+top: calc(50% - 60px/2 + 358px);
+
+background: #F1F1F1;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 90px;
+
+
+/* The health of ingedients on food is constantly in question. Find out whether ingredients in food is healthy by uploading a picture below. Hold companies ACCOUNTABLE for what they put in YOUR food. */
+
+
+position: absolute;
+width: 692px;
+height: 460px;
+left: 89px;
+top: 338px;
+
+font-family: 'Pontano Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 46px;
+
+color: #000000;
+
+
+
+/* Ingredients */
+
+
+position: absolute;
+width: 203px;
+height: 67px;
+left: 342px;
+top: 209px;
+
+font-family: 'Jockey One';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 67px;
+
+color: #000000;
+
+
+
+/* Facts */
+
+
+position: absolute;
+width: 91px;
+height: 67px;
+left: 344px;
+top: 106px;
+
+font-family: 'Jockey One';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 67px;
+
+color: #000000;
+
+
+
+/* ’Bout */
+
+
+position: absolute;
+width: 96px;
+height: 67px;
+left: 337px;
+top: 158px;
+
+font-family: 'Jockey One';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 67px;
+
+color: #000000;
+
+
+
+/* FBI */
+
+
+position: absolute;
+width: 320px;
+height: 178px;
+left: 41px;
+top: 72px;
+
+font-family: 'Lato';
+font-style: normal;
+font-weight: 600;
+font-size: 192px;
+line-height: 230px;
+
+color: #000000;
+
+
+
+/* Rectangle 3 */
+
+
+position: absolute;
+width: 297px;
+height: 64px;
+right: 1035px;
+top: calc(50% - 64px/2 + 276px);
+
+background: #F1F1F1;
+border-radius: 90px;
+
+
+/* Choose File */
+
+
+position: absolute;
+width: 211px;
+height: 54px;
+left: 150px;
+top: 761px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 54px;
+/* identical to box height */
+
+
+color: #000000;
+
+
+
+/* Upload */
+
+
+position: absolute;
+width: 133px;
+height: 54px;
+left: 189px;
+top: 846px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 54px;
+/* identical to box height */
+
+
+color: #000000;
+
+
+
+/* banana 1 */
+
+
+position: absolute;
+width: 246px;
+height: 253px;
+left: 559px;
+top: 65px;
+
+background: url(banana.png);
+}
+
+
+
