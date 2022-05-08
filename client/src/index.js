@@ -4,13 +4,14 @@ import './index.css';
 import App from './App';
 import ImageUpload from './ImageUpload'
 import reportWebVitals from './reportWebVitals';
-import Test from './Test'
+
+import BottomBar from './BottomBar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Test />
     <ImageUpload />
+    <BottomBar />
   </React.StrictMode>
 );
 

@@ -42,9 +42,11 @@ class ImageUpload extends React.Component {
   render() {
     return (
       <>
-
+      <div>
+        <div>
       <App ingredients={this.state.ingredientList} facts={this.state.factList}/>
-
+        </div>
+        <div>
       <form onSubmit={this.handleUploadImage}>
         <div>
           <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
@@ -53,9 +55,10 @@ class ImageUpload extends React.Component {
         <div>
           <button>Upload</button>
         </div>
-        {/* <img src={this.state.imageURL} alt="img" /> */}
-      </form>
-
+       
+      </form> 
+      </div>
+     </div>
 
       </>
     );
