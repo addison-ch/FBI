@@ -2,6 +2,7 @@ import React from 'react';
 
 import App from './App';
 
+import './imageUpload.css';
 
 class ImageUpload extends React.Component {
   constructor(props) {
@@ -33,33 +34,45 @@ class ImageUpload extends React.Component {
           // this.state.ingredientList = body['ok']
           this.setState({ factList: body['ok']['fact']});
           this.setState({ ingredientList: body['ok']['ingredient'], });
-          
-
-          
       })
     });
-  } 
+  }
+  
   render() {
     return (
       <>
       <div>
         <div>
-          <form onSubmit={this.handleUploadImage}>
-            <div>
-              <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
+          <form className='image_upload_section' onSubmit={this.handleUploadImage}>
+            <div className='image_upload_section__left-panel'>
+              <div className='left-panel__market-1-container'>
+                <span className='market-1-container__ingredients-unmasked'>
+                  Ingredients <br></br>
+                  Unmasked.
+                </span>
+              </div>
+              <div className='left-panel__market-2-container'>
+                <span className='market-2-container__statement'>
+                  Hold companies <b>ACCOUNTABLE</b> <br></br>
+                  for what they put in <b>YOUR</b> food. 
+                </span>
+              </div>
             </div>
-          <div>
-            <button>Upload</button>
-          </div>
-        </form> 
-      </div>
+            <div className='image_upload_section__right-panel'>
+              <div className='buttons'>
+                <label className='label' htmlFor='hidden_field_id'>Choose File</label>
+              </div>
+              <input className='hidden_field' id='hidden_field_id' ref={(ref) => { this.uploadInput = ref; }} type="file" />
+              <div className='buttons'>Upload</div>
+            </div>
+          </form> 
+        </div>
+        <div>
+          <App ingredients={this.state.ingredientList} facts={this.state.factList}/>
+        </div>
 
-      <div>
-        <App ingredients={this.state.ingredientList} facts={this.state.factList}/>
       </div>
-
-     </div>
-    </>
+      </>
     );
   }
 }
