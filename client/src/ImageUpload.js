@@ -63,7 +63,7 @@ class ImageUpload extends React.Component {
                 <label className='label' htmlFor='hidden_field_id'>Choose File</label>
               </div>
               <input className='hidden_field' id='hidden_field_id' ref={(ref) => { this.uploadInput = ref; }} type="file" />
-              <div className='buttons'>Upload</div>
+              <button className='buttons'>Upload</button>
             </div>
           </form> 
         </div>
