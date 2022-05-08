@@ -1,5 +1,7 @@
 import React from 'react';
-import App from './App'
+
+import App from './App';
+
 
 class ImageUpload extends React.Component {
   constructor(props) {
@@ -35,6 +37,9 @@ class ImageUpload extends React.Component {
   render() {
     return (
       <>
+
+      <App />
+
       <form onSubmit={this.handleUploadImage}>
         <div>
           <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
@@ -45,8 +50,8 @@ class ImageUpload extends React.Component {
         </div>
         {/* <img src={this.state.imageURL} alt="img" /> */}
       </form>
-      {/* <h2>I am a {this.state.ingredientList[0]} Car!</h2> */}
-      {/* <App keywords={this.state.ingredientList}/> */}
+
+
       </>
     );
   }
