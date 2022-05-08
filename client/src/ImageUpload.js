@@ -45,8 +45,8 @@ class ImageUpload extends React.Component {
         </div>
         {/* <img src={this.state.imageURL} alt="img" /> */}
       </form>
-      <h2>I am a {this.state.ingredientList[0]} Car!</h2>;
-      <App />
+      {/* <h2>I am a {this.state.ingredientList[0]} Car!</h2> */}
+      {/* <App keywords={this.state.ingredientList}/> */}
       </>
     );
   }
