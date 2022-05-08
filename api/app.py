@@ -26,7 +26,7 @@ app = Flask(__name__)
 def api(ingredientList):
     count = 0
     ingredientFact = []
-    # ingredientList = ['ascorbic acid', 'rishie', 'reduced ironthiamin']
+    ingredientList = ['ascorbic acid', 'rishie', 'reduced ironthiamin']
     fakeIngredientList = []
     if ingredientList is None:
         ingredientList = []

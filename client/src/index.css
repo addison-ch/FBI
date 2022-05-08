@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(180deg, #f5a254 -0.98%, rgba(240, 180, 180, 0) 99.02%);
+  background-attachment:fixed;
+  height:100%;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 * {
