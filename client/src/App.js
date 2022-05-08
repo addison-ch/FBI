@@ -15,6 +15,13 @@ export default function App ({ingredients, facts}) {
       value: fax[i]
     });
   }
+  const toggle = (id) => {
+    if(document.getElementById(id).style.display == 'none'){
+      document.getElementById(id).style.display = 'block'
+    } else if (document.getElementById(id).style.display == 'block'){
+      document.getElementById(id).style.display = 'none'
+    }
+  }
   
   // for(let i = 0; i<ingr.length; i++){
   //   fullList.push({ingredients[i]: fax[i]})
@@ -27,10 +34,12 @@ export default function App ({ingredients, facts}) {
         {fullList.map((name) => {
           return (
             <>
-              <h3 key={name[Object.keys(name)[0]]} className="content">
+              <h3 key={name[Object.keys(name)[0]]} className="collapsible" onClick={() => toggle(name[Object.keys(name)[1]].substr(0, 6))}>
+
                     {name[Object.keys(name)[0]].charAt(0).toUpperCase() + name[Object.keys(name)[0]].slice(1)}  
+
               </h3>
-              <div>
+              <div id={name[Object.keys(name)[1]].substr(0, 6)} key={name[Object.keys(name)[1]].substr(0, 6)} className="content" style={{display: "none" }}>
                   {name[Object.keys(name)[1]]}
               </div>
             </>
