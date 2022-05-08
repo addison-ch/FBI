@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Raleway:wght@300&display=swap');
+
+.buttons { 
+    user-select: none;
+    cursor: pointer;
+
+    width: 300px;
+    height: 60px;
+    right: 794px;
+
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 90px;
+    
+    font-family: 'Poppins', sans-serif;;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 54px;
+
+    transition: 150ms ease-in-out;
+}
+
+.buttons:hover { 
+    background: #e8e8e8;
+}
+
+.hidden_field { 
+    display: none;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 
 import App from './App';
 
+import './imageUpload.css';
 
 class ImageUpload extends React.Component {
   constructor(props) {
@@ -33,12 +34,10 @@ class ImageUpload extends React.Component {
           // this.state.ingredientList = body['ok']
           this.setState({ factList: body['ok']['fact']});
           this.setState({ ingredientList: body['ok']['ingredient'], });
-          
-
-          
       })
     });
-  } 
+  }
+  
   render() {
     return (
       <>
@@ -46,10 +45,13 @@ class ImageUpload extends React.Component {
         <div>
           <form onSubmit={this.handleUploadImage}>
             <div>
-              <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
+              <button className='buttons'>
+                <label className='' htmlFor='hidden_field'>Choose File</label>
+              </button>
+              <input className='hidden_field' id='hidden_field' ref={(ref) => { this.uploadInput = ref; }} type="file" />
             </div>
           <div>
-            <button>Upload</button>
+            <button className='buttons'>Upload</button>
           </div>
         </form> 
       </div>
