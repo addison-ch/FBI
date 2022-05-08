@@ -9,7 +9,8 @@ class ImageUpload extends React.Component {
 
     this.state = {
       imageURL: '',
-      ingredientList: ['hi', 'whats'],
+      ingredientList: [],
+      factList: []
     };
 
     this.handleUploadImage = this.handleUploadImage.bind(this);
@@ -27,18 +28,22 @@ class ImageUpload extends React.Component {
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-          console.log(body['ok']);
+          console.log(body['ok']['ingredient'])
+          console.log(body['ok']['fact'])
           // this.state.ingredientList = body['ok']
-          this.setState({ ingredientList: body['ok']});
-          console.log(this.state.ingredientList)
-      });
+          this.setState({ factList: body['ok']['fact']});
+          this.setState({ ingredientList: body['ok']['ingredient'], });
+          
+
+          
+      })
     });
   } 
   render() {
     return (
       <>
 
-      <App />
+      <App ingredients={this.state.ingredientList} facts={this.state.factList}/>
 
       <form onSubmit={this.handleUploadImage}>
         <div>

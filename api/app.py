@@ -46,8 +46,7 @@ def api(ingredientList):
             ingredientFact.append(answer_box['snippet'])
             print(answer_box['snippet'])
             count = count + 1
-            if count == 2:
-                break
+            
 
 #     # params = {
 #     # "q": "What is the use of sodium chloride in food?",
@@ -74,7 +73,7 @@ def fileUpload():
     print(f.filename)
 
     # instantiates a PaddleOCR object
-    ocr_model = PaddleOCR(lang='en')
+    ocr_model = PaddleOCR(lang='en', use_gpu = False)
 
     # gets path to image
     image_path = os.path.join('.', f.filename)
