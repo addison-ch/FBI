@@ -45,23 +45,23 @@ class ImageUpload extends React.Component {
         <div>
           <form onSubmit={this.handleUploadImage}>
             <div>
-              <button className='buttons'>
-                <label className='' htmlFor='hidden_field'>Choose File</label>
-              </button>
-              <input className='hidden_field' id='hidden_field' ref={(ref) => { this.uploadInput = ref; }} type="file" />
+              <div className='buttons'>
+                <label className='label' htmlFor='hidden_field_id'>Choose File</label>
+              </div>
+              <input className='hidden_field' id='hidden_field_id' ref={(ref) => { this.uploadInput = ref; }} type="file" />
             </div>
-          <div>
-            <button className='buttons'>Upload</button>
-          </div>
-        </form> 
-      </div>
+            <div>
+              <div className='buttons'>Upload</div>
+            </div>
+          </form> 
+        </div>
 
-      <div>
-        <App ingredients={this.state.ingredientList} facts={this.state.factList}/>
-      </div>
+        <div>
+          <App ingredients={this.state.ingredientList} facts={this.state.factList}/>
+        </div>
 
-     </div>
-    </>
+      </div>
+      </>
     );
   }
 }
