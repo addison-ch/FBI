@@ -1,0 +1,47 @@
+.button1 {
+
+    border: none;
+    font-size: 1.5em;
+    text-align: center;
+    height: 60px;
+    width: 297px;
+    left: 108px;
+    border-radius: 90px;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+label {
+        cursor: pointer;
+        border: none;
+        font-size: 1.5em;
+        text-align: center;
+        height: 60px;
+        width: 297px;
+        left: 108px;
+        border-radius: 90px;
+        background-color: white;
+        cursor: pointer;
+    }
+
+
+.left {
+    width: 50%;
+    height: 80vh;
+    margin-right: auto;
+    margin-left: 100px;
+    background-color: red;
+    border-radius: 8%;
+}
+
+.innerleft {
+    display: flex;
+}
+
+#upload {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+

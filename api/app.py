@@ -46,9 +46,9 @@ def fileUpload():
     print(f.filename)
 
     # instantiates a PaddleOCR object
-    ocr_model = PaddleOCR(lang='en')
+    ocr_model = PaddleOCR(lang='en', use_gpu = False)
 
-    # gets path to image
+    # gets path to image s
     image_path = os.path.join('.', f.filename)
 
     # Using the OCR model to perform the OCR

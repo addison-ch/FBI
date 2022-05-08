@@ -1,4 +1,5 @@
 import React from 'react';
+import './ImageUpload.css';
 
 class ImageUpload extends React.Component {
   constructor(props) {
@@ -23,23 +24,24 @@ class ImageUpload extends React.Component {
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-          console.log(body);
+          console.log(body.ok);
       });
     });
   } 
 
   render() {
     return (
+      <div className="left">
       <form onSubmit={this.handleUploadImage}>
+        <div className="innerleft">
         <div>
-          <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
-        </div>
-        <br />
-        <div>
-          <button>Upload</button>
-        </div>
+          <label htmlFor="upload"></label>
+          <input  ref={(ref) => { this.uploadInput = ref; }} type="file" />
+        </div>        <div>
+          <button className="button1">Upload</button>
+        </div></div>
         {/* <img src={this.state.imageURL} alt="img" /> */}
-      </form>
+      </form></div>
     );
   }
 }
