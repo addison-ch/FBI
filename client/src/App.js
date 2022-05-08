@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 
+
 export default function App ({ingredients}, {facts}) {
+
   const [data, setData] = useState('');
   const [show, setShow] = useState(false);
   const ingr = ingredients;
@@ -11,13 +13,16 @@ export default function App ({ingredients}, {facts}) {
 
   const [names, setNames] = useState(initialValue);
 
+
   const myFunction = () => {
-    fetch("http://localhost:3000/api").then((response) => {
+    fetch("http://localhost:5000/api").then((response) => {
+
       return response.json();
     }).then((response) => {
       setData(response.msg)
       console.log(response.msg);
       console.log(response.msg.length)
+      var variableLength = response.msg.length
       for(let i = 0; i<=1; i++){
         initialValue.push(response.msg[i])
         console.log(response.msg[i])
@@ -27,8 +32,7 @@ export default function App ({ingredients}, {facts}) {
 
   }
 
-  const steps = [];
- 
+
   return(
     <>
       <div>
@@ -44,7 +48,9 @@ export default function App ({ingredients}, {facts}) {
         })}
       </div>
       <div> 
+
         <button onClick={myFunction}>
+
           Display nutrition information
         </button>
     </div>
