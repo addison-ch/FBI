@@ -100,10 +100,19 @@ def fileUpload():
         else:
             splitted.append(results[i][1][0])
 
+    splitted_from_periods = []
+    for i in range(len(splitted)):
+        if (splitted[i].find('.') != -1):
+            results_splitted = splitted[i].split('.')
+            for result_splitted in results_splitted:
+                splitted_from_periods.append(result_splitted)
+        else:
+            splitted_from_periods.append(splitted[i])
+
     # filtered down results
     filtered = []
-    for i in range(len(splitted)):
-        result_check = splitted[i].lower()
+    for i in range(len(splitted_from_periods)):
+        result_check = splitted_from_periods[i].lower()
         if (result_check.find('ingredients') != -1):  
             filtered.append(result_check.replace('ingredients:', ''))
         elif (result_check.find('contains') != -1):
