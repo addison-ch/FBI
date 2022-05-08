@@ -73,8 +73,18 @@ def fileUpload():
             filtered.append(result_check.replace('may contain', ''))
         else:
             filtered.append(result_check)
+<<<<<<< Updated upstream
    
     return {"ok":filtered}
+=======
+    keywords = filtered
+    # return {"msg": {"keywords": filtered, "facts": ["It is healthy", "It tastes good"]}}
+    # return {"msg" : filtered }
+    return {"ok": filtered}
+    
+def get_keywords():
+    return keywords
+>>>>>>> Stashed changes
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(24)
