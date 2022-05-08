@@ -23,7 +23,7 @@ class ImageUpload extends React.Component {
     data.append('file', this.uploadInput.files[0]);
     data.append('filename', "label");
 
-    fetch('http://localhost:5000/image_upload', {
+    fetch('http://localhost:3000/image_upload', {
       method: 'POST',
       body: data,
     }).then((response) => {

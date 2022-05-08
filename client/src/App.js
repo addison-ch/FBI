@@ -35,10 +35,9 @@ export default function App ({ingredients, facts}) {
           return (
             <>
               <h3 key={name[Object.keys(name)[0]]} className="collapsible" onClick={() => toggle(name[Object.keys(name)[1]].substr(0, 6))}>
-
                     {name[Object.keys(name)[0]].charAt(0).toUpperCase() + name[Object.keys(name)[0]].slice(1)}  
-
               </h3>
+              
               <div id={name[Object.keys(name)[1]].substr(0, 6)} key={name[Object.keys(name)[1]].substr(0, 6)} className="content" style={{display: "none" }}>
                   {name[Object.keys(name)[1]]}
               </div>
