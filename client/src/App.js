@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 
-
-export default function App () {
+export default function App (props) {
   const [data, setData] = useState('');
   const [show, setShow] = useState(false);
   var initialValue = []
@@ -10,13 +9,14 @@ export default function App () {
 
   const [names, setNames] = useState(initialValue);
 
-  const myFunction = () => {
-    fetch("http://localhost:3000/api").then((response) => {
+  const receiveData = () => {
+    fetch('http://localhost:3000/api').then((response) => {
       return response.json();
     }).then((response) => {
       setData(response.msg)
       console.log(response.msg);
       console.log(response.msg.length)
+      var variableLength = response.msg.length
       for(let i = 0; i<=1; i++){
         initialValue.push(response.msg[i])
         console.log(response.msg[i])
@@ -45,34 +45,9 @@ export default function App () {
   //     setData(response.msg)
   //     // console.log(response.msg);
   //   })}, [])
-
-  const steps = [];
-  // for (let i = 1; i <= 2; i++) {
-  //   steps.push(
-  //     <div key={i} className="content">
-  //       <button className="collapsible" onClick={({i}) =>setShow(!show)}>{data["ingredient"]}</button>
-  //       {
-  //         show?<div>{data["fact"]}</div>:null
-  //       }
-  //     </div>
-  //   );
-  // }
-  // return array.map(function(each){
-  //   return(<h1>hello {each.name}</h1>)
-  // })
+ 
   return(
     <>
-      {/* {data.map(item => <div className="content">
-        <button className="collapsible" onClick={() =>setShow(!show)}>{item["ingredient"]}</button>
-        {
-          show?<div>{item["fact"]}</div>:null
-        }
-      </div>)}  */}
-      {/* <div>
-        {names.map((name) => {
-          return <div key={name}>{name['ingredient']}</div>;
-        })}
-      </div> */}
       <div>
         {names.map((name) => {
           return (
@@ -82,7 +57,6 @@ export default function App () {
                    show?<div>{name["fact"]}</div>:null
                  }
           </div>)
-          // <div>hello</div>
         })}
       </div>
       
@@ -91,7 +65,7 @@ export default function App () {
 
       <div> 
       {/* {count == 0 */}
-        <button onClick={myFunction}>
+        <button onClick={receiveData}>
           Display nutrition information
         </button>
       {/* } */}
