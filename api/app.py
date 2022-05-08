@@ -26,7 +26,8 @@ app = Flask(__name__)
 def api(ingredientList):
     count = 0
     ingredientFact = []
-    ingredientList = ['ascorbic acid', 'mononitrate', 'reduced ironthiamin']
+    # ingredientList = ['ascorbic acid', 'rishie', 'reduced ironthiamin']
+    fakeIngredientList = []
     if ingredientList is None:
         ingredientList = []
     else:
@@ -41,12 +42,20 @@ def api(ingredientList):
             }
             search = GoogleSearch(params)
             results = search.get_dict()
-            answer_box = results["answer_box"]
+            if "answer_box" in results:
+                answer_box = results["answer_box"]
+                ingredientFact.append(answer_box['snippet'])
+                print(answer_box['snippet'])
+            else:
+                fakeIngredientList.append(x)
+                print('skipped')
+
             # "fact": answer_box['snippet']
-            ingredientFact.append(answer_box['snippet'])
-            print(answer_box['snippet'])
+            
             count = count + 1
             
+        for x in fakeIngredientList:
+            ingredientList.remove(x)
 
 #     # params = {
 #     # "q": "What is the use of sodium chloride in food?",
