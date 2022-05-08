@@ -1,6 +1,6 @@
 footer {
   clear: both;
-  position: absolute;
+  /* position: absolute; */
   height: 40px;
   margin-top: -40px;
   width: 100%;
@@ -13,6 +13,8 @@ footer {
   justify-content: space-around;
   align-items: center;
 
+  position: fixed;
+  left: 0;
   bottom: 0;
 }
 
