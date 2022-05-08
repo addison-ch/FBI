@@ -38,7 +38,7 @@ def api(ingredientList):
             "q": f"What is the use of {x} in food?",
             "hl": "en",
             "gl": "us",
-            "api_key": "1c1af191bef69e75c008dd69a150a7e2a688994a3ce696cdb784f52aa0d6ef0e"
+            "api_key": "b4bfa458bab44dbb71efac87a38b6d84f450291b2fe950602940262c3f85e0c7"
             }
             search = GoogleSearch(params)
             results = search.get_dict()
