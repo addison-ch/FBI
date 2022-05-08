@@ -46,8 +46,7 @@ def api(ingredientList):
             ingredientFact.append(answer_box['snippet'])
             print(answer_box['snippet'])
             count = count + 1
-            if count == 2:
-                break
+            
 
 #     # params = {
 #     # "q": "What is the use of sodium chloride in food?",
@@ -63,7 +62,7 @@ def api(ingredientList):
 #     # print('hi')
 #     # print('hello')
     # return {"msg" : [{"ingredient": "Sodium Chloride", "fact": "It is healthy"}, {"ingredient": "Sodium Carbonate", "fact": "It is used for leavening bread."}] }
-    return {"msg" : {"ingredient": ingredientList, "fact": ingredientFact} }
+    return {"ingredient": ingredientList, "fact": ingredientFact}
 
 # @app.route("/image_upload", methods=['POST'])
 @app.route("/image_upload", methods=['POST'])
@@ -74,7 +73,7 @@ def fileUpload():
     print(f.filename)
 
     # instantiates a PaddleOCR object
-    ocr_model = PaddleOCR(lang='en')
+    ocr_model = PaddleOCR(lang='en', use_gpu = False)
 
     # gets path to image
     image_path = os.path.join('.', f.filename)
@@ -107,10 +106,12 @@ def fileUpload():
     print(api(filtered))
     # return {"msg": {"keywords": filtered, "facts": ["It is healthy", "It tastes good"]}}
     # return {"msg" : filtered }
-    return {"ok": filtered}
+    return {"ok": api(filtered)}
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(24)
     app.run(debug=True)
 
+
 CORS(app, expose_headers='Authorization')
+
