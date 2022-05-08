@@ -1,4 +1,5 @@
 import React from 'react';
+import App from './App'
 
 class ImageUpload extends React.Component {
   constructor(props) {
@@ -6,6 +7,7 @@ class ImageUpload extends React.Component {
 
     this.state = {
       imageURL: '',
+      ingredientList: ['hi', 'whats'],
     };
 
     this.handleUploadImage = this.handleUploadImage.bind(this);
@@ -18,18 +20,21 @@ class ImageUpload extends React.Component {
     data.append('file', this.uploadInput.files[0]);
     data.append('filename', "label");
 
-    fetch('http://localhost:5000/image_upload', {
+    fetch('http://localhost:3000/image_upload', {
       method: 'POST',
       body: data,
     }).then((response) => {
       response.json().then((body) => {
-          console.log(body);
+          console.log(body['ok']);
+          // this.state.ingredientList = body['ok']
+          this.setState({ ingredientList: body['ok']});
+          console.log(this.state.ingredientList)
       });
     });
   } 
-
   render() {
     return (
+      <>
       <form onSubmit={this.handleUploadImage}>
         <div>
           <input ref={(ref) => { this.uploadInput = ref; }} type="file" />
@@ -40,6 +45,9 @@ class ImageUpload extends React.Component {
         </div>
         {/* <img src={this.state.imageURL} alt="img" /> */}
       </form>
+      {/* <h2>I am a {this.state.ingredientList[0]} Car!</h2> */}
+      {/* <App keywords={this.state.ingredientList}/> */}
+      </>
     );
   }
 }

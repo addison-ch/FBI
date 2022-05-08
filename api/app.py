@@ -23,21 +23,49 @@ import json, requests
 app = Flask(__name__)
 
 @app.route("/api")
-def api():
-    # params = {
-    # "q": "What is the use of sodium chloride in food?",
-    # "hl": "en",
-    # "gl": "us",
-    # "api_key": "1c1af191bef69e75c008dd69a150a7e2a688994a3ce696cdb784f52aa0d6ef0e"
-    # }
-    # search = GoogleSearch(params)
-    # results = search.get_dict()
-    # answer_box = results["answer_box"]
-    # "fact": answer_box['snippet']
-    # print(answer_box['snippet'])
-    # print('hi')
-    return {"msg" : [{"ingredient": "Sodium Chloride", "fact": "It is healthy"}, {"ingredient": "Sodium Carbonate", "fact": "It is used for leavening bread."}] }
+def api(ingredientList):
+    count = 0
+    ingredientFact = []
+    ingredientList = ['ascorbic acid', 'mononitrate', 'reduced ironthiamin']
+    if ingredientList is None:
+        ingredientList = []
+    else:
+        for x in ingredientList:
+            print(x)
+            print(f"What is the use of {x} in food?")
+            params = {
+            "q": f"What is the use of {x} in food?",
+            "hl": "en",
+            "gl": "us",
+            "api_key": "1c1af191bef69e75c008dd69a150a7e2a688994a3ce696cdb784f52aa0d6ef0e"
+            }
+            search = GoogleSearch(params)
+            results = search.get_dict()
+            answer_box = results["answer_box"]
+            # "fact": answer_box['snippet']
+            ingredientFact.append(answer_box['snippet'])
+            print(answer_box['snippet'])
+            count = count + 1
+            if count == 2:
+                break
 
+#     # params = {
+#     # "q": "What is the use of sodium chloride in food?",
+#     # "hl": "en",
+#     # "gl": "us",
+#     # "api_key": "1c1af191bef69e75c008dd69a150a7e2a688994a3ce696cdb784f52aa0d6ef0e"
+#     # }
+#     # search = GoogleSearch(params)
+#     # results = search.get_dict()
+#     # answer_box = results["answer_box"]
+#     # "fact": answer_box['snippet']
+#     # print(answer_box['snippet'])
+#     # print('hi')
+#     # print('hello')
+    # return {"msg" : [{"ingredient": "Sodium Chloride", "fact": "It is healthy"}, {"ingredient": "Sodium Carbonate", "fact": "It is used for leavening bread."}] }
+    return {"msg" : {"ingredient": ingredientList, "fact": ingredientFact} }
+
+# @app.route("/image_upload", methods=['POST'])
 @app.route("/image_upload", methods=['POST'])
 def fileUpload():
     f = request.files['file']
@@ -76,8 +104,10 @@ def fileUpload():
             filtered.append(result_check.replace('may contain', ''))
         else:
             filtered.append(result_check)
-   
-    return {"ok":filtered}
+    print(api(filtered))
+    # return {"msg": {"keywords": filtered, "facts": ["It is healthy", "It tastes good"]}}
+    # return {"msg" : filtered }
+    return {"ok": filtered}
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(24)
