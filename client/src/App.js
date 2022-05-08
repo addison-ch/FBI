@@ -9,8 +9,10 @@ export default function App (props) {
 
   const [names, setNames] = useState(initialValue);
 
-  const receiveData = () => {
-    fetch('http://localhost:3000/api').then((response) => {
+
+  const myFunction = () => {
+    fetch("http://localhost:5000/api").then((response) => {
+
       return response.json();
     }).then((response) => {
       setData(response.msg)
