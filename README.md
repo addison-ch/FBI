@@ -1,4 +1,4 @@
-# FBI (Facts 'bout Ingredients)
+# FBI (Facts 'Bout Ingredients)
 
 How to set up:
 
