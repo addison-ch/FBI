@@ -38,7 +38,7 @@ def api():
     # results = search.get_dict()
     # answer_box = results["answer_box"]
     # "fact": answer_box['snippet']
-    # print(answer_box['snippet'])
+    # print(answer_box['snippet']) {msg: {ingredient: arr, fact: arr}
     # print('hi')
     return {"msg" : [{"ingredient": "Sodium Chloride", "fact": "It is healthy"}, {"ingredient": "Sodium Carbonate", "fact": "It is used for leavening bread."}] }
 
