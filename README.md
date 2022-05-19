@@ -21,7 +21,7 @@
 Set up repository
 ```
 git clone https://github.com/addison-ch/FBI/
-cd BarParks
+cd /FBI
 ```
 
 Set up back-end server
