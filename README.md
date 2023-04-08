@@ -12,6 +12,10 @@
 - API endpoints and all request handling was done with Python/Flask
 - [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) was utilized to perform accurate optical character recognition 
 
+### Images/Demo 📷
+[![Watch the video](FBI.jpg)](https://www.youtube.com/watch?v=igmloHsiuGA)
+[![Watch the video](FBI2.jpg)](https://www.youtube.com/watch?v=igmloHsiuGA)
+
 ### Try it out 🏗
 Set up repository
 ```
@@ -33,6 +37,3 @@ cd /client
 npm install
 npm start
 ```
-### Images/Demo 📷
-[![Watch the video](FBI.jpg)](https://www.youtube.com/watch?v=igmloHsiuGA)
-[![Watch the video](FBI2.jpg)](https://www.youtube.com/watch?v=igmloHsiuGA)
