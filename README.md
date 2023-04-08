@@ -2,10 +2,7 @@
 
 #### [RU Hacks 2022](https://ru-hacks-2022-digital-15171.devpost.com/) first place winner 🥇
 
-
-### What it does ❓
-- Converts photos of food ingredient labels into researched descriptions of individual ingredients, rendered in an intuitive and readable format
-
+Web app to convert photos of food ingredient labels into researched descriptions of individual ingredients, rendered in an intuitive and readable format
 
 ### How we built it 🔨
 - Our front-end and user-interface was designed and built using React
