@@ -13,8 +13,6 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('HELLO WORLD')
 
 
-
-
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 from serpapi import GoogleSearch
 import json, requests
@@ -26,7 +24,6 @@ app = Flask(__name__)
 def api(ingredientList):
     count = 0
     ingredientFact = []
-    # ingredientList = ['ascorbic acid', 'rishie', 'reduced ironthiamin']
     fakeIngredientList = []
     if ingredientList is None:
         ingredientList = []
@@ -49,31 +46,14 @@ def api(ingredientList):
             else:
                 fakeIngredientList.append(x)
                 print('skipped')
-
-            # "fact": answer_box['snippet']
-            
+                
             count = count + 1
             
         for x in fakeIngredientList:
             ingredientList.remove(x)
 
-#     # params = {
-#     # "q": "What is the use of sodium chloride in food?",
-#     # "hl": "en",
-#     # "gl": "us",
-#     # "api_key": "1c1af191bef69e75c008dd69a150a7e2a688994a3ce696cdb784f52aa0d6ef0e"
-#     # }
-#     # search = GoogleSearch(params)
-#     # results = search.get_dict()
-#     # answer_box = results["answer_box"]
-#     # "fact": answer_box['snippet']
-#     # print(answer_box['snippet'])
-#     # print('hi')
-#     # print('hello')
-    # return {"msg" : [{"ingredient": "Sodium Chloride", "fact": "It is healthy"}, {"ingredient": "Sodium Carbonate", "fact": "It is used for leavening bread."}] }
     return {"ingredient": ingredientList, "fact": ingredientFact}
 
-# @app.route("/image_upload", methods=['POST'])
 @app.route("/image_upload", methods=['POST'])
 def fileUpload():
     f = request.files['file']
